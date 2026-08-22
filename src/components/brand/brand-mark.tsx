@@ -17,6 +17,8 @@ export type BrandMarkProps = {
   size?: BrandMarkSize | number;
   className?: string;
   decorative?: boolean;
+  /** Skip inline dimensions so CSS (clamp / vw) can size the mark. */
+  fluid?: boolean;
 };
 
 export function BrandMark({
@@ -24,6 +26,7 @@ export function BrandMark({
   size = "md",
   className = "",
   decorative = true,
+  fluid = false,
 }: BrandMarkProps) {
   const dim = typeof size === "number" ? size : sizes[size];
   const tone = surface === "ink" ? "text-bone" : "text-ink";
@@ -31,7 +34,7 @@ export function BrandMark({
   return (
     <span
       className={`brand-mark ${tone} ${className}`}
-      style={{ width: dim, height: dim }}
+      style={fluid ? undefined : { width: dim, height: dim }}
       role={decorative ? "presentation" : "img"}
       aria-label={decorative ? undefined : `${brand.name} mark`}
       aria-hidden={decorative || undefined}

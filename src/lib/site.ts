@@ -12,7 +12,7 @@ export const nav = [
   { href: "/#work", label: "Work" },
   { href: "/#services", label: "Services" },
   { href: "/#studio", label: "Studio" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#contact", label: "Contact", opensContact: true },
 ] as const;
 
 export const services = [

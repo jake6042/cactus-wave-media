@@ -37,7 +37,7 @@ export default async function WorkDetailPage({
         <p className="text-[11px] tracking-[0.28em] uppercase text-copper">
           {work.category}
         </p>
-        <h1 className="mt-4 font-serif text-6xl leading-none text-bone sm:text-8xl">
+        <h1 className="display-xl mt-4 font-serif text-bone">
           {work.title}
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-sand">
@@ -88,7 +88,7 @@ export default async function WorkDetailPage({
             </p>
             <Link
               href={`/work/${next.slug}`}
-              className="mt-2 block font-serif text-4xl text-bone hover:text-copper"
+              className="mt-2 block font-serif text-[clamp(1.75rem,5vw,2.5rem)] text-bone hover:text-copper"
             >
               {next.title}
             </Link>

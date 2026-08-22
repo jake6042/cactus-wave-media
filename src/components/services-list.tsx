@@ -8,7 +8,7 @@ export function ServicesList({
   heading?: boolean;
 }) {
   return (
-    <section id="services" className="scroll-mt-24 mx-auto max-w-7xl px-5 py-28 sm:px-8">
+    <section id="services" className="scroll-mt-24 mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
       {heading ? (
         <Reveal>
           <SectionHeading
@@ -22,17 +22,17 @@ export function ServicesList({
       <div className={heading ? "mt-16" : ""}>
         {services.map((service, index) => (
           <Reveal key={service.id} delay={(Math.min(index, 4) as 0 | 1 | 2 | 3 | 4)}>
-            <article className="grid gap-4 border-t border-line py-10 md:grid-cols-12 md:gap-8">
-              <p className="text-[12px] tracking-[0.2em] uppercase text-copper md:col-span-2">
+            <article className="grid gap-4 border-t border-line py-8 sm:py-10 lg:grid-cols-12 lg:gap-8">
+              <p className="text-[12px] tracking-[0.2em] uppercase text-copper lg:col-span-2">
                 {service.id}
               </p>
-              <div className="md:col-span-4">
-                <h3 className="font-serif text-3xl text-bone sm:text-4xl">
+              <div className="min-w-0 lg:col-span-4">
+                <h3 className="font-serif text-[clamp(1.65rem,4vw,2.25rem)] text-bone">
                   {service.title}
                 </h3>
                 <p className="mt-2 text-sm text-sage">{service.lede}</p>
               </div>
-              <p className="text-sm leading-relaxed text-sand md:col-span-6 md:pt-2">
+              <p className="text-sm leading-relaxed text-sand lg:col-span-6 lg:pt-2">
                 {service.body}
               </p>
             </article>

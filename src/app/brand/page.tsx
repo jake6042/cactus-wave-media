@@ -42,7 +42,7 @@ export default function BrandPage() {
           <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
               <Eyebrow>Identity</Eyebrow>
-              <h1 className="mt-4 font-serif text-5xl leading-[0.95] text-bone sm:text-7xl md:text-8xl">
+              <h1 className="display-xl mt-4 font-serif text-bone">
                 The mark
                 <br />
                 <span className="italic text-bone-dim">holds still.</span>
@@ -62,7 +62,11 @@ export default function BrandPage() {
           <div className="flex min-h-[28rem] flex-col justify-between bg-ink px-5 py-12 sm:px-8">
             <Eyebrow>On ink</Eyebrow>
             <div className="flex flex-1 items-center justify-center py-10">
-              <BrandMark surface="ink" size={200} />
+              <BrandMark
+                surface="ink"
+                fluid
+                className="size-[min(46vw,12.5rem)]"
+              />
             </div>
             <p className="font-mono text-[11px] tracking-[0.16em] uppercase text-sand">
               Bone on {brandColors.ink.hex}
@@ -73,7 +77,11 @@ export default function BrandPage() {
               On bone
             </p>
             <div className="flex flex-1 items-center justify-center py-10">
-              <BrandMark surface="bone" size={200} />
+              <BrandMark
+                surface="bone"
+                fluid
+                className="size-[min(46vw,12.5rem)]"
+              />
             </div>
             <p className="font-mono text-[11px] tracking-[0.16em] uppercase text-ink/45">
               Ink on {brandColors.bone.hex}
@@ -85,7 +93,7 @@ export default function BrandPage() {
       <section className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
         <Reveal>
           <Eyebrow>Lockup</Eyebrow>
-          <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-bone sm:text-6xl">
+          <h2 className="display-lg mt-4 max-w-3xl font-serif text-bone">
             The name is set in type.
           </h2>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-sand">
@@ -123,7 +131,7 @@ export default function BrandPage() {
       <section className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
           <Reveal>
             <Eyebrow>The kit</Eyebrow>
-            <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-bone sm:text-6xl">
+            <h2 className="display-lg mt-4 max-w-3xl font-serif text-bone">
               Files, not a second mark.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-sand">
@@ -177,7 +185,7 @@ export default function BrandPage() {
         <div className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
           <Reveal>
             <Eyebrow>Clear space</Eyebrow>
-            <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-bone sm:text-6xl">
+            <h2 className="display-lg mt-4 max-w-3xl font-serif text-bone">
               Air around the stamp.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-sand">
@@ -185,9 +193,12 @@ export default function BrandPage() {
             </p>
           </Reveal>
           <Reveal delay={2}>
-            <div className="mt-16 flex justify-center border border-line bg-ink px-8 py-16 sm:px-20">
-              <div className="relative border border-dashed border-line-strong p-[12.5%]">
-                <BrandMark size={160} />
+            <div className="mt-16 flex justify-center overflow-hidden border border-line bg-ink px-5 py-10 sm:px-20 sm:py-16">
+              <div className="relative border border-dashed border-line-strong p-[10%] sm:p-[12.5%]">
+                <BrandMark
+                  fluid
+                  className="size-[min(40vw,10rem)]"
+                />
               </div>
             </div>
             <p className="mt-6 text-center font-mono text-[11px] tracking-[0.16em] uppercase text-sand">
@@ -200,7 +211,7 @@ export default function BrandPage() {
       <section className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
         <Reveal>
           <Eyebrow>Palette</Eyebrow>
-          <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-bone sm:text-6xl">
+          <h2 className="display-lg mt-4 max-w-3xl font-serif text-bone">
             Four colors. Then silence.
           </h2>
         </Reveal>
@@ -248,7 +259,7 @@ export default function BrandPage() {
         <div className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
           <Reveal>
             <Eyebrow>Type</Eyebrow>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-bone sm:text-6xl">
+            <h2 className="display-lg mt-4 font-serif text-bone">
               Sans for the stamp.
               <br />
               Serif for the room.
@@ -276,7 +287,7 @@ export default function BrandPage() {
               <p className="text-[11px] tracking-[0.22em] uppercase text-sand">
                 {brandType.serif.name}
               </p>
-              <p className="mt-6 font-serif text-5xl leading-[0.95] text-bone sm:text-7xl">
+              <p className="display-lg mt-6 font-serif text-bone">
                 Presence
                 <br />
                 <span className="italic text-bone-dim">that holds.</span>
@@ -295,7 +306,7 @@ export default function BrandPage() {
       <section className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
         <Reveal>
           <Eyebrow>Discipline</Eyebrow>
-          <h2 className="mt-4 font-serif text-4xl leading-tight text-bone sm:text-6xl">
+          <h2 className="display-lg mt-4 font-serif text-bone">
             Do this. Not that.
           </h2>
         </Reveal>
@@ -339,7 +350,7 @@ export default function BrandPage() {
             <p className="text-[11px] tracking-[0.28em] uppercase text-copper-deep">
               Voice
             </p>
-            <h2 className="mt-4 max-w-3xl font-serif text-4xl leading-tight sm:text-6xl">
+            <h2 className="display-lg mt-4 max-w-3xl font-serif">
               {brandVoice.tone}
             </h2>
           </Reveal>

@@ -31,12 +31,12 @@ export default function StudioPage() {
           <p className="text-[11px] tracking-[0.28em] uppercase text-copper">
             The studio
           </p>
-          <h1 className="mt-4 max-w-4xl font-serif text-5xl leading-[0.95] text-bone sm:text-7xl md:text-8xl">
+          <h1 className="display-xl mt-4 max-w-4xl font-serif text-bone">
             Desert-born.
             <br />
             <span className="italic text-bone-dim">Built for anywhere.</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-sand">
+          <p className="mt-8 max-w-2xl text-base leading-relaxed text-sand sm:text-lg">
             Cactus Wave Media is for companies that want to look expensive on
             the internet. We make the site, handle hosting and domains, and
             run the campaigns that follow.
@@ -60,7 +60,7 @@ export default function StudioPage() {
 
       <section className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
         <Reveal>
-          <h2 className="max-w-3xl font-serif text-4xl leading-tight text-bone sm:text-6xl">
+          <h2 className="display-lg max-w-3xl font-serif text-bone">
             How we like to work.
           </h2>
         </Reveal>

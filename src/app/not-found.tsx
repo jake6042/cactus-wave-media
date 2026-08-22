@@ -8,7 +8,7 @@ export default function NotFound() {
       <p className="mt-8 text-[11px] tracking-[0.28em] uppercase text-copper">
         404
       </p>
-      <h1 className="mt-4 font-serif text-6xl text-bone sm:text-8xl">
+      <h1 className="display-xl mt-4 font-serif text-bone">
         Drifted off the map.
       </h1>
       <p className="mt-6 max-w-md text-sand">

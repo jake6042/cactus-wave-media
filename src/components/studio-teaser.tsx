@@ -3,12 +3,12 @@ import { Reveal } from "@/components/reveal";
 
 export function StudioTeaser() {
   return (
-    <section id="studio" className="scroll-mt-24 mx-auto max-w-7xl px-5 py-28 sm:px-8">
+    <section id="studio" className="scroll-mt-24 mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
       <Reveal>
         <p className="text-[11px] tracking-[0.28em] uppercase text-copper">
           The studio
         </p>
-        <h2 className="mt-6 max-w-4xl font-serif text-4xl leading-[1.08] text-bone sm:text-6xl md:text-7xl">
+        <h2 className="display-lg mt-6 max-w-4xl font-serif text-bone">
           One studio. Site, host, campaign.
         </h2>
         <p className="mt-8 max-w-2xl text-base leading-relaxed text-sand sm:text-lg">

@@ -6,6 +6,8 @@ export type WordmarkProps = {
   surface?: BrandSurface;
   /** Hide the “MEDIA” line. */
   compact?: boolean;
+  /** Stamp only — no Cactus Wave / Media type. */
+  markOnly?: boolean;
   /** Mark above type, centered. Default is mark left, type right. */
   stacked?: boolean;
   /** If set, the lockup is the home (or given) link. */
@@ -17,6 +19,7 @@ export type WordmarkProps = {
 export function Wordmark({
   surface = "ink",
   compact = false,
+  markOnly = false,
   stacked = false,
   href,
   markSize,
@@ -37,18 +40,20 @@ export function Wordmark({
         size={size}
         className="transition-transform duration-500 group-hover:-translate-y-0.5"
       />
-      <span className={`flex flex-col leading-none ${stacked ? "items-center" : ""}`}>
-        <span className="text-[11px] font-medium tracking-[0.22em] uppercase">
-          {brand.shortName}
-        </span>
-        {compact ? null : (
-          <span
-            className={`mt-1 text-[10px] tracking-[0.28em] uppercase ${unitColor}`}
-          >
-            {brand.unit}
+      {markOnly ? null : (
+        <span className={`flex flex-col leading-none ${stacked ? "items-center" : ""}`}>
+          <span className="text-[11px] font-medium tracking-[0.22em] uppercase">
+            {brand.shortName}
           </span>
-        )}
-      </span>
+          {compact ? null : (
+            <span
+              className={`mt-1 text-[10px] tracking-[0.28em] uppercase ${unitColor}`}
+            >
+              {brand.unit}
+            </span>
+          )}
+        </span>
+      )}
     </span>
   );
 

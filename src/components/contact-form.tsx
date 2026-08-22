@@ -3,15 +3,6 @@
 import { useState, type FormEvent } from "react";
 import { site } from "@/lib/site";
 
-const interests = [
-  "Website",
-  "Design",
-  "Brand",
-  "Hosting / domain",
-  "Growth",
-  "Retainer",
-];
-
 export function ContactForm() {
   const [sent, setSent] = useState(false);
 
@@ -21,14 +12,12 @@ export function ContactForm() {
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
     const company = String(data.get("company") ?? "").trim();
-    const interest = String(data.get("interest") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
 
     const body = [
       `Name: ${name}`,
       `Email: ${email}`,
       company ? `Company: ${company}` : null,
-      interest ? `Interest: ${interest}` : null,
       "",
       message,
     ]
@@ -45,11 +34,16 @@ export function ContactForm() {
 
   if (sent) {
     return (
-      <div className="border border-line bg-ink-2 p-8">
-        <p className="font-serif text-3xl text-bone">Your mail client is opening.</p>
-        <p className="mt-4 text-sm leading-relaxed text-sand">
+      <div>
+        <p className="font-serif text-2xl leading-tight text-ink">
+          Your mail client is opening.
+        </p>
+        <p className="mt-3 text-[13px] leading-relaxed text-ink/55">
           If it doesn’t, write directly to{" "}
-          <a className="text-copper underline-offset-4 hover:underline" href={`mailto:${site.email}`}>
+          <a
+            className="text-brass underline-offset-4 hover:underline"
+            href={`mailto:${site.email}`}
+          >
             {site.email}
           </a>
           .
@@ -59,44 +53,33 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-6">
-      <div className="grid gap-6 sm:grid-cols-2">
+    <form onSubmit={onSubmit} className="grid gap-5">
+      <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Name" name="name" required autoComplete="name" />
-        <Field label="Email" name="email" type="email" required autoComplete="email" />
+        <Field
+          label="Email"
+          name="email"
+          type="email"
+          required
+          autoComplete="email"
+        />
       </div>
-      <div className="grid gap-6 sm:grid-cols-2">
-        <Field label="Company" name="company" autoComplete="organization" />
-        <label className="block">
-          <span className="text-[11px] tracking-[0.18em] uppercase text-sand">
-            What do you need
-          </span>
-          <select
-            name="interest"
-            className="mt-2 w-full border-0 border-b border-line-strong bg-transparent py-3 text-bone outline-none focus:border-copper"
-            defaultValue="Website"
-          >
-            {interests.map((item) => (
-              <option key={item} value={item} className="bg-ink text-bone">
-                {item}
-              </option>
-            ))}
-          </select>
-        </label>
-      </div>
+      <Field label="Company" name="company" autoComplete="organization" optional />
       <label className="block">
-        <span className="text-[11px] tracking-[0.18em] uppercase text-sand">
-          Tell us about the work
+        <span className="text-[10px] tracking-[0.2em] uppercase text-sage">
+          What you need
         </span>
         <textarea
           name="message"
           required
-          rows={5}
-          className="mt-2 w-full resize-y border-0 border-b border-line-strong bg-transparent py-3 text-bone outline-none focus:border-copper"
+          rows={3}
+          placeholder="A site, a domain, a campaign — a sentence is enough."
+          className="mt-1.5 w-full resize-none border-0 border-b border-ink/15 bg-transparent py-2 text-[15px] leading-relaxed text-ink outline-none placeholder:text-ink/30 focus:border-brass"
         />
       </label>
       <button
         type="submit"
-        className="justify-self-start rounded-full bg-copper px-8 py-3 text-[13px] font-medium tracking-[0.14em] uppercase text-ink transition-colors hover:bg-bone"
+        className="mt-1 min-h-11 justify-self-start rounded-full bg-brass px-7 py-2.5 text-[11px] font-medium tracking-[0.16em] uppercase text-ink transition-colors hover:bg-ink hover:text-bone"
       >
         Send the note
       </button>
@@ -109,25 +92,30 @@ function Field({
   name,
   type = "text",
   required,
+  optional,
   autoComplete,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
+  optional?: boolean;
   autoComplete?: string;
 }) {
   return (
     <label className="block">
-      <span className="text-[11px] tracking-[0.18em] uppercase text-sand">
+      <span className="text-[10px] tracking-[0.2em] uppercase text-sage">
         {label}
+        {optional ? (
+          <span className="ml-2 tracking-[0.12em] text-ink/35">Optional</span>
+        ) : null}
       </span>
       <input
         name={name}
         type={type}
         required={required}
         autoComplete={autoComplete}
-        className="mt-2 w-full border-0 border-b border-line-strong bg-transparent py-3 text-bone outline-none focus:border-copper"
+        className="mt-1.5 w-full border-0 border-b border-ink/15 bg-transparent py-2 text-[15px] text-ink outline-none focus:border-brass"
       />
     </label>
   );

@@ -3,12 +3,12 @@ import { Reveal } from "@/components/reveal";
 export function InfraFeature() {
   return (
     <section className="bg-bone text-ink">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-28 sm:px-8 lg:grid-cols-12">
-        <Reveal className="lg:col-span-5">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:gap-12 sm:px-8 sm:py-24 lg:grid-cols-12 lg:py-28">
+        <Reveal className="min-w-0 lg:col-span-5">
           <p className="text-[11px] tracking-[0.28em] uppercase text-copper-deep">
             Hosting & domains
           </p>
-          <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-6xl">
+          <h2 className="display-lg mt-4 font-serif">
             Domain. Host. Inbox. Done.
           </h2>
         </Reveal>

@@ -46,6 +46,20 @@ Canva cannot set Geist by family through the API — type is a geometric grotesq
 | `canva/avatar-circle-on-ink.png` | [Avatar — circle on ink](https://www.canva.com/d/IceEn5Bt5_-OT2v) `DAHS_jX6HSk` | Profile crop. Prefer the bone-plate stamp if the circle frame feels busy. |
 | `canva/email-signature-on-bone.png` | [Email — signature lockup on bone](https://www.canva.com/d/T9eHIJcZRDFNu8k) `DAHS_txkSgY` | Same as the bone horizontal lockup (resize quota ran out before a thin strip). |
 
+## Opening-rate campaign (first ads)
+
+Folder: [Cactus Wave Media — Opening Rate](https://www.canva.com/folder/FAHS_wxNc_Y)
+
+Magic generation and Magic Resize were exhausted, so these are edited copies of the official plates — same ribbed stamp (`MAHS_eplHE8`), not a new cactus. Copy is an opening studio courtesy, not a cheap sale.
+
+| File | Canva | Size |
+| --- | --- | --- |
+| `campaign/opening-rate-instagram-1080.png` | [Opening Rate — Instagram 1080×1080](https://www.canva.com/design/DAHS_0PXmWM) | 1080×1080 (canvas is 2000×2000, 1:1) |
+| `campaign/opening-rate-story-1080x1920.png` | [Opening Rate — Story 1080×1920](https://www.canva.com/design/DAHS_00W9BA) | Local 1080×1920 (ink-padded). Canva canvas is still 2000×2000 until Resize quota returns. |
+| `campaign/opening-rate-landscape-1200x630.png` | [Opening Rate — Landscape 1200×630](https://www.canva.com/design/DAHS_0m2gfs) | 1200×630 Meta/OG |
+
+**Copy:** Opening rate / Half off through 31 October / cactuswavemedia.com (landscape only).
+
 Older exploratory logos stay in [Cactus Wave Media](https://www.canva.com/folder/FAHS_Zb77Es). Do not ship those.
 
 ## Not in this Canva pass

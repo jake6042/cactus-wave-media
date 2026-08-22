@@ -6,7 +6,7 @@ import { works } from "@/lib/work";
 
 export function WorkPreview() {
   return (
-    <section id="work" className="scroll-mt-24 mx-auto max-w-7xl px-5 py-28 sm:px-8">
+    <section id="work" className="scroll-mt-24 mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
       <Reveal>
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading
@@ -16,7 +16,7 @@ export function WorkPreview() {
           />
           <a
             href="/#work"
-            className="text-[12px] tracking-[0.18em] uppercase text-copper transition-colors hover:text-bone"
+            className="inline-flex min-h-11 items-center text-[12px] tracking-[0.18em] uppercase text-copper transition-colors hover:text-bone"
           >
             All work →
           </a>
@@ -28,20 +28,20 @@ export function WorkPreview() {
           <Reveal key={work.slug} delay={(Math.min(index + 1, 4) as 1 | 2 | 3 | 4)}>
             <Link
               href={`/work/${work.slug}`}
-              className="group grid overflow-hidden border border-line transition-colors duration-500 hover:border-copper/50 md:grid-cols-12"
+              className="group grid overflow-hidden border border-line transition-colors duration-500 hover:border-copper/50 lg:grid-cols-12"
             >
-              <div className="relative aspect-[16/11] md:col-span-7 md:aspect-auto md:min-h-[340px]">
+              <div className="relative aspect-[16/11] lg:col-span-7 lg:aspect-auto lg:min-h-[340px]">
                 <ProjectVisual
                   variant={work.variant}
                   className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.03]"
                 />
               </div>
-              <div className="flex flex-col justify-between bg-ink-2 p-7 md:col-span-5 md:p-10">
+              <div className="flex min-w-0 flex-col justify-between bg-ink-2 p-5 sm:p-7 lg:col-span-5 lg:p-10">
                 <div>
                   <p className="text-[11px] tracking-[0.22em] uppercase text-sand">
                     {String(index + 1).padStart(2, "0")} / {work.category}
                   </p>
-                  <h3 className="mt-4 font-serif text-4xl text-bone group-hover:text-copper sm:text-5xl">
+                  <h3 className="mt-4 font-serif text-[clamp(1.75rem,5vw,3rem)] text-bone group-hover:text-copper">
                     {work.title}
                   </h3>
                   <p className="mt-4 text-sm leading-relaxed text-sand">

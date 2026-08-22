@@ -18,7 +18,7 @@ export default function WorkPage() {
           <p className="text-[11px] tracking-[0.28em] uppercase text-copper">
             Selected work
           </p>
-          <h1 className="mt-4 max-w-3xl font-serif text-5xl leading-[0.95] text-bone sm:text-7xl">
+          <h1 className="display-lg mt-4 max-w-3xl font-serif text-bone">
             Work that holds.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-sand">
@@ -44,7 +44,7 @@ export default function WorkPage() {
                     <p className="text-[11px] tracking-[0.2em] uppercase text-sand">
                       {String(index + 1).padStart(2, "0")} / {work.category}
                     </p>
-                    <h2 className="mt-2 font-serif text-4xl text-bone group-hover:text-copper">
+                    <h2 className="mt-2 font-serif text-[clamp(1.75rem,5vw,2.5rem)] text-bone group-hover:text-copper">
                       {work.title}
                     </h2>
                   </div>

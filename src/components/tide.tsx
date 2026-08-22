@@ -3,7 +3,7 @@ export function Tide() {
     <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 overflow-hidden sm:h-52">
       <svg
         viewBox="0 0 1440 200"
-        className="absolute inset-x-0 bottom-0 h-full w-[110%]"
+        className="absolute inset-x-0 bottom-0 h-full w-[105%] max-w-none"
         preserveAspectRatio="none"
         aria-hidden="true"
       >

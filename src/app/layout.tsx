@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { ContactProvider } from "@/components/contact-dialog";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { brandAssets, brandColors } from "@/lib/brand";
@@ -26,6 +27,9 @@ const instrument = Instrument_Serif({
 export const viewport: Viewport = {
   themeColor: brandColors.ink.hex,
   colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -68,17 +72,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable} h-full scroll-smooth scroll-pt-24 antialiased`}
     >
-      <body className="min-h-full bg-ink text-bone">
+      <body className="min-h-full overflow-x-clip bg-ink text-bone">
         <div className="grain" aria-hidden="true" />
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-copper focus:px-4 focus:py-2 focus:text-ink"
-        >
-          Skip to content
-        </a>
-        <SiteHeader />
-        <main id="main">{children}</main>
-        <SiteFooter />
+        <ContactProvider>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-copper focus:px-4 focus:py-2 focus:text-ink"
+          >
+            Skip to content
+          </a>
+          <SiteHeader />
+          <main id="main">{children}</main>
+          <SiteFooter />
+        </ContactProvider>
       </body>
     </html>
   );

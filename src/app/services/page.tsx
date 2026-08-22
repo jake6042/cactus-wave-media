@@ -19,7 +19,7 @@ export default function ServicesPage() {
           <p className="text-[11px] tracking-[0.28em] uppercase text-copper">
             Services
           </p>
-          <h1 className="mt-4 max-w-4xl font-serif text-5xl leading-[0.95] text-bone sm:text-7xl">
+          <h1 className="display-lg mt-4 max-w-4xl font-serif text-bone">
             The site, the brand, the host.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-sand">
