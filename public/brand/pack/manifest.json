@@ -1,0 +1,342 @@
+{
+  "groups": [
+    {
+      "title": "Mark",
+      "lede": "The stamp alone. Transparent glyphs, then the same stamp on a field.",
+      "items": [
+        {
+          "file": "mark/mark-ink.png",
+          "use": "Ink glyph, transparent, 1024. CSS masks, print, any field."
+        },
+        {
+          "file": "mark/mark-ink-512.png",
+          "use": "Ink glyph, transparent, 512."
+        },
+        {
+          "file": "mark/mark-bone.png",
+          "use": "Bone glyph, transparent, 1024. CSS masks, print, any field."
+        },
+        {
+          "file": "mark/mark-bone-512.png",
+          "use": "Bone glyph, transparent, 512."
+        },
+        {
+          "file": "mark/mark-on-ink.png",
+          "use": "Bone stamp on ink. Default. Site, social, the night field."
+        },
+        {
+          "file": "mark/mark-on-ink-512.png",
+          "use": "Bone stamp on ink. Default. Site, social, the night field. 512."
+        },
+        {
+          "file": "mark/mark-on-bone.png",
+          "use": "Ink stamp on bone. Reverse. Print, light plates."
+        },
+        {
+          "file": "mark/mark-on-bone-512.png",
+          "use": "Ink stamp on bone. Reverse. Print, light plates. 512."
+        },
+        {
+          "file": "mark/mark-on-sage.png",
+          "use": "Ink stamp on sage. Use rarely — sage is an accent, not a system."
+        },
+        {
+          "file": "mark/mark-on-sage-512.png",
+          "use": "Ink stamp on sage. Use rarely — sage is an accent, not a system. 512."
+        },
+        {
+          "file": "mark/mark-on-brass.png",
+          "use": "Ink stamp on brass. Use rarely — metal as a field, not a habit."
+        },
+        {
+          "file": "mark/mark-on-brass-512.png",
+          "use": "Ink stamp on brass. Use rarely — metal as a field, not a habit. 512."
+        }
+      ]
+    },
+    {
+      "title": "Avatars",
+      "lede": "Circle and squircle. Bone on ink, ink on bone.",
+      "items": [
+        {
+          "file": "avatar/avatar-ink-circle-1024.png",
+          "use": "Bone stamp on ink, circle, 1024. Profile photo, Slack, Instagram."
+        },
+        {
+          "file": "avatar/avatar-ink-circle-512.png",
+          "use": "Bone stamp on ink, circle, 512. Profile photo, Slack, Instagram."
+        },
+        {
+          "file": "avatar/avatar-ink-squircle-1024.png",
+          "use": "Bone stamp on ink, squircle, 1024. Profile photo, Slack, Instagram."
+        },
+        {
+          "file": "avatar/avatar-ink-squircle-512.png",
+          "use": "Bone stamp on ink, squircle, 512. Profile photo, Slack, Instagram."
+        },
+        {
+          "file": "avatar/avatar-bone-circle-1024.png",
+          "use": "Ink stamp on bone, circle, 1024. Profile photo, Slack, Instagram."
+        },
+        {
+          "file": "avatar/avatar-bone-circle-512.png",
+          "use": "Ink stamp on bone, circle, 512. Profile photo, Slack, Instagram."
+        },
+        {
+          "file": "avatar/avatar-bone-squircle-1024.png",
+          "use": "Ink stamp on bone, squircle, 1024. Profile photo, Slack, Instagram."
+        },
+        {
+          "file": "avatar/avatar-bone-squircle-512.png",
+          "use": "Ink stamp on bone, squircle, 512. Profile photo, Slack, Instagram."
+        }
+      ]
+    },
+    {
+      "title": "Favicons",
+      "lede": "Mark on ink. Drop these in as icons; do not box them again.",
+      "items": [
+        {
+          "file": "favicon/favicon-16.png",
+          "use": "Browser tab, 16."
+        },
+        {
+          "file": "favicon/favicon-32.png",
+          "use": "Browser tab, 32."
+        },
+        {
+          "file": "favicon/favicon-48.png",
+          "use": "Windows site icon, 48."
+        },
+        {
+          "file": "favicon/apple-touch-icon.png",
+          "use": "Apple touch icon, 180."
+        },
+        {
+          "file": "favicon/icon-192.png",
+          "use": "Android / PWA, 192."
+        },
+        {
+          "file": "favicon/icon-512.png",
+          "use": "Android / PWA, 512. Mark on ink."
+        }
+      ]
+    },
+    {
+      "title": "Horizontal wordmark",
+      "lede": "The site lockup. Mark left, type right.",
+      "items": [
+        {
+          "file": "wordmark/wordmark-horizontal-dark.png",
+          "use": "Transparent. Bone type + bone mark. Dark or photograph backgrounds. 2×."
+        },
+        {
+          "file": "wordmark/wordmark-horizontal-dark-1x.png",
+          "use": "Same lockup, 1×."
+        },
+        {
+          "file": "wordmark/wordmark-horizontal-on-ink.png",
+          "use": "The default plate. Bone lockup on ink."
+        },
+        {
+          "file": "wordmark/wordmark-horizontal-on-ink-1x.png",
+          "use": "Ink plate, 1×."
+        },
+        {
+          "file": "wordmark/wordmark-horizontal-light.png",
+          "use": "Transparent. Ink type + ink mark. Light backgrounds. 2×."
+        },
+        {
+          "file": "wordmark/wordmark-horizontal-light-1x.png",
+          "use": "Same lockup, 1×."
+        },
+        {
+          "file": "wordmark/wordmark-horizontal-on-bone.png",
+          "use": "Reverse plate. Ink lockup on bone."
+        },
+        {
+          "file": "wordmark/wordmark-horizontal-on-bone-1x.png",
+          "use": "Bone plate, 1×."
+        }
+      ]
+    },
+    {
+      "title": "Stacked wordmark",
+      "lede": "The stacked site lockup. Mark above type.",
+      "items": [
+        {
+          "file": "wordmark/wordmark-stacked-dark.png",
+          "use": "Stacked, transparent, for dark fields. Matches `<Wordmark stacked />`."
+        },
+        {
+          "file": "wordmark/wordmark-stacked-dark-1x.png",
+          "use": "Stacked dark, 1×."
+        },
+        {
+          "file": "wordmark/wordmark-stacked-on-ink.png",
+          "use": "Stacked on ink."
+        },
+        {
+          "file": "wordmark/wordmark-stacked-on-ink-1x.png",
+          "use": "Stacked on ink, 1×."
+        },
+        {
+          "file": "wordmark/wordmark-stacked-light.png",
+          "use": "Stacked, transparent, for light fields."
+        },
+        {
+          "file": "wordmark/wordmark-stacked-light-1x.png",
+          "use": "Stacked light, 1×."
+        },
+        {
+          "file": "wordmark/wordmark-stacked-on-bone.png",
+          "use": "Stacked on bone."
+        },
+        {
+          "file": "wordmark/wordmark-stacked-on-bone-1x.png",
+          "use": "Stacked on bone, 1×."
+        }
+      ]
+    },
+    {
+      "title": "Compact wordmark",
+      "lede": "“Cactus Wave” only — the compact site lockup.",
+      "items": [
+        {
+          "file": "wordmark/wordmark-compact-dark.png",
+          "use": "Compact — no Media line. Transparent, dark fields. Matches `<Wordmark compact />`."
+        },
+        {
+          "file": "wordmark/wordmark-compact-dark-1x.png",
+          "use": "Compact dark, 1×."
+        },
+        {
+          "file": "wordmark/wordmark-compact-on-ink.png",
+          "use": "Compact on ink."
+        },
+        {
+          "file": "wordmark/wordmark-compact-on-ink-1x.png",
+          "use": "Compact on ink, 1×."
+        },
+        {
+          "file": "wordmark/wordmark-compact-light.png",
+          "use": "Compact, transparent, light fields."
+        },
+        {
+          "file": "wordmark/wordmark-compact-light-1x.png",
+          "use": "Compact light, 1×."
+        },
+        {
+          "file": "wordmark/wordmark-compact-on-bone.png",
+          "use": "Compact on bone."
+        },
+        {
+          "file": "wordmark/wordmark-compact-on-bone-1x.png",
+          "use": "Compact on bone, 1×."
+        }
+      ]
+    },
+    {
+      "title": "SVG wordmarks",
+      "lede": "Self-contained. Mark is the PNG glyph; type is Geist outlined.",
+      "items": [
+        {
+          "file": "svg/wordmark-horizontal-dark.svg",
+          "use": "SVG. Bone lockup, transparent. Type outlined in Geist."
+        },
+        {
+          "file": "svg/wordmark-horizontal-light.svg",
+          "use": "SVG. Ink lockup, transparent. Type outlined in Geist."
+        },
+        {
+          "file": "svg/wordmark-stacked-dark.svg",
+          "use": "Stacked SVG, bone on transparent."
+        },
+        {
+          "file": "svg/wordmark-stacked-light.svg",
+          "use": "Stacked SVG, ink on transparent."
+        },
+        {
+          "file": "svg/wordmark-compact-dark.svg",
+          "use": "Compact SVG, bone on transparent."
+        },
+        {
+          "file": "svg/wordmark-compact-light.svg",
+          "use": "Compact SVG, ink on transparent."
+        }
+      ]
+    },
+    {
+      "title": "Social",
+      "lede": "Open Graph and Twitter cards. Lockup centered on a field.",
+      "items": [
+        {
+          "file": "social/og-ink.png",
+          "use": "Open Graph 1200×630. Horizontal lockup on ink."
+        },
+        {
+          "file": "social/og-bone.png",
+          "use": "Open Graph 1200×630. Horizontal lockup on bone."
+        },
+        {
+          "file": "social/twitter-ink.png",
+          "use": "Twitter / X 1200×600. Same lockup, shorter field."
+        },
+        {
+          "file": "social/twitter-bone.png",
+          "use": "Twitter / X 1200×600 on bone."
+        }
+      ]
+    },
+    {
+      "title": "Email",
+      "lede": "A small horizontal strip, header scale.",
+      "items": [
+        {
+          "file": "email/signature-dark.png",
+          "use": "Transparent strip for dark email themes. Header-scale lockup."
+        },
+        {
+          "file": "email/signature-on-ink.png",
+          "use": "Same strip on an ink plate."
+        },
+        {
+          "file": "email/signature-light.png",
+          "use": "Transparent strip for light email themes."
+        },
+        {
+          "file": "email/signature-on-bone.png",
+          "use": "Same strip on a bone plate."
+        }
+      ]
+    },
+    {
+      "title": "App",
+      "lede": "Padded mark for a home screen or PWA.",
+      "items": [
+        {
+          "file": "app/app-icon-512.png",
+          "use": "PWA / home screen, 512. Bone mark on ink, maskable padding."
+        },
+        {
+          "file": "app/app-icon-512-squircle.png",
+          "use": "Same icon, pre-masked squircle."
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "name": "Bone glyph on sage",
+      "why": "Readable-ish, but bone on a mineral fill looks like a cheap colorway. Sage is an accent, never a field."
+    },
+    {
+      "name": "Bone glyph on brass",
+      "why": "Contrast collapses (~2:1). Bone on gold does not hold."
+    },
+    {
+      "name": "Sage / brass wordmark plates",
+      "why": "The live system forbids sage and brass as fills. A colored lockup plate would look like a logo generator, not a studio kit."
+    }
+  ]
+}
