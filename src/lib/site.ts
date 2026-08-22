@@ -9,10 +9,10 @@ export const site = {
 } as const;
 
 export const nav = [
-  { href: "/work", label: "Work" },
-  { href: "/services", label: "Services" },
-  { href: "/studio", label: "Studio" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#work", label: "Work" },
+  { href: "/#services", label: "Services" },
+  { href: "/#studio", label: "Studio" },
+  { href: "/#contact", label: "Contact" },
 ] as const;
 
 export const services = [

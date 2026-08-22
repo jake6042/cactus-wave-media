@@ -93,7 +93,7 @@ export default async function WorkDetailPage({
               {next.title}
             </Link>
           </div>
-          <ButtonLink href="/contact">Start a project</ButtonLink>
+          <ButtonLink href="/#contact">Start a project</ButtonLink>
         </div>
       </div>
     </article>

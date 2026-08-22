@@ -3,7 +3,7 @@ import { Reveal } from "@/components/reveal";
 
 export function StudioTeaser() {
   return (
-    <section className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
+    <section id="studio" className="scroll-mt-24 mx-auto max-w-7xl px-5 py-28 sm:px-8">
       <Reveal>
         <p className="text-[11px] tracking-[0.28em] uppercase text-copper">
           The studio
@@ -17,7 +17,7 @@ export function StudioTeaser() {
           No handoffs. No seven-vendor pile.
         </p>
         <div className="mt-10">
-          <ButtonLink href="/studio" variant="ghost">
+          <ButtonLink href="/#studio" variant="ghost">
             Meet the studio
           </ButtonLink>
         </div>

@@ -66,7 +66,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable} h-full scroll-smooth scroll-pt-24 antialiased`}
     >
       <body className="min-h-full bg-ink text-bone">
         <div className="grain" aria-hidden="true" />

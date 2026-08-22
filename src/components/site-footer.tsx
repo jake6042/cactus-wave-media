@@ -19,12 +19,12 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2">
             {nav.map((item) => (
               <li key={item.href}>
-                <Link
+                <a
                   href={item.href}
                   className="text-sm text-bone-dim transition-colors hover:text-bone"
                 >
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

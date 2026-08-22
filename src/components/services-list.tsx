@@ -8,7 +8,7 @@ export function ServicesList({
   heading?: boolean;
 }) {
   return (
-    <section className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
+    <section id="services" className="scroll-mt-24 mx-auto max-w-7xl px-5 py-28 sm:px-8">
       {heading ? (
         <Reveal>
           <SectionHeading

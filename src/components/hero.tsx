@@ -25,8 +25,8 @@ export function Hero() {
               when you need them.
             </p>
             <div className="hero-rise hero-rise-4 mt-10 flex flex-wrap items-center gap-4">
-              <ButtonLink href="/contact">Start a project</ButtonLink>
-              <ButtonLink href="/work" variant="ghost">
+              <ButtonLink href="/#contact">Start a project</ButtonLink>
+              <ButtonLink href="/#work" variant="ghost">
                 Selected work
               </ButtonLink>
             </div>

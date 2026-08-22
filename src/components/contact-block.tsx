@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export function ContactBlock() {
   return (
-    <section id="contact" className="border-t border-line bg-ink-2">
+    <section id="contact" className="scroll-mt-24 border-t border-line bg-ink-2">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 py-28 sm:px-8 lg:grid-cols-12">
         <Reveal className="lg:col-span-5">
           <p className="text-[11px] tracking-[0.28em] uppercase text-copper">

@@ -1,9 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { Wordmark } from "@/components/brand";
 import { nav } from "@/lib/site";
+
+function scrollHomeSection(
+  event: MouseEvent<HTMLAnchorElement>,
+  href: string,
+) {
+  const id = href.includes("#") ? href.slice(href.indexOf("#") + 1) : "";
+  if (!id || window.location.pathname !== "/") return;
+  event.preventDefault();
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  window.history.replaceState(null, "", href);
+}
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,13 +48,15 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={(event) => scrollHomeSection(event, item.href)}
               className="text-[12px] tracking-[0.18em] uppercase text-bone-dim transition-colors hover:text-bone"
             >
               {item.label}
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/#contact"
+            onClick={(event) => scrollHomeSection(event, "/#contact")}
             className="rounded-full bg-copper px-4 py-2 text-[11px] font-medium tracking-[0.16em] uppercase text-ink transition-colors hover:bg-bone"
           >
             Start a project
@@ -85,15 +98,21 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              onClick={() => setOpen(false)}
+              onClick={(event) => {
+                setOpen(false);
+                scrollHomeSection(event, item.href);
+              }}
               className="font-serif text-5xl text-bone"
             >
               {item.label}
             </Link>
           ))}
           <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
+            href="/#contact"
+            onClick={(event) => {
+              setOpen(false);
+              scrollHomeSection(event, "/#contact");
+            }}
             className="mt-8 text-[13px] tracking-[0.18em] uppercase text-copper"
           >
             Start a project

@@ -21,11 +21,18 @@ export function ButtonLink({
   variant?: keyof typeof variants;
   className?: string;
 }) {
+  const classNames = `inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[13px] font-medium tracking-[0.14em] uppercase transition-colors duration-300 ${variants[variant]} ${className}`;
+
+  if (href.includes("#")) {
+    return (
+      <a href={href} className={classNames}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[13px] font-medium tracking-[0.14em] uppercase transition-colors duration-300 ${variants[variant]} ${className}`}
-    >
+    <Link href={href} className={classNames}>
       {children}
     </Link>
   );

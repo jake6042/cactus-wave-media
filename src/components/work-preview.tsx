@@ -6,7 +6,7 @@ import { works } from "@/lib/work";
 
 export function WorkPreview() {
   return (
-    <section className="mx-auto max-w-7xl px-5 py-28 sm:px-8">
+    <section id="work" className="scroll-mt-24 mx-auto max-w-7xl px-5 py-28 sm:px-8">
       <Reveal>
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading
@@ -14,12 +14,12 @@ export function WorkPreview() {
             title="What we make."
             body="Sites, brand, and hosting treated as one. A few frames from the book."
           />
-          <Link
-            href="/work"
+          <a
+            href="/#work"
             className="text-[12px] tracking-[0.18em] uppercase text-copper transition-colors hover:text-bone"
           >
             All work →
-          </Link>
+          </a>
         </div>
       </Reveal>
 
