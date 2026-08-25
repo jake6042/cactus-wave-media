@@ -17,20 +17,30 @@ export function Reveal({
     const node = ref.current;
     if (!node) return;
 
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
-      node.classList.add("is-in");
+    const show = () => node.classList.add("is-in");
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      show();
+      return;
+    }
+
+    const inView = () => {
+      const rect = node.getBoundingClientRect();
+      return rect.bottom > 0 && rect.top < window.innerHeight;
+    };
+
+    if (inView()) {
+      show();
       return;
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          node.classList.add("is-in");
-          observer.disconnect();
-        }
+        if (!entry.isIntersecting) return;
+        show();
+        observer.disconnect();
       },
-      { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0, rootMargin: "80px 0px 80px 0px" },
     );
 
     observer.observe(node);

@@ -113,7 +113,6 @@
 html {
   scroll-behavior: smooth;
   background: var(--ink);
-  overflow-x: clip;
 }
 
 body {
@@ -206,10 +205,74 @@ body {
   }
 }
 
-/* Hero stamp: sized for the 1100px+ split; hidden below that via Tailwind. */
+/* Hero stamp: hit-tested to the glyph, not the square plate. */
+.hero-mark-wrap {
+  flex-shrink: 0;
+  cursor: default;
+}
+
 .hero-mark {
+  position: relative;
   width: clamp(8.25rem, 42vw, 15rem);
   height: clamp(8.25rem, 42vw, 15rem);
+  transform-origin: 50% 55%;
+  transform-style: preserve-3d;
+  transition: transform 0.18s ease-out;
+}
+
+.hero-mark-glyph {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  transition: filter 0.35s ease;
+}
+
+.hero-mark-brass,
+.hero-mark-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask-image: url("/brand/mark.png");
+  mask-image: url("/brand/mark.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.hero-mark-brass {
+  background: var(--brass);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.hero-mark-sheen {
+  opacity: 0;
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 244, 220, 0.85) 0%,
+    rgba(196, 165, 116, 0.35) 28%,
+    transparent 55%
+  );
+  mix-blend-mode: screen;
+  transition: opacity 0.2s ease;
+}
+
+.hero-mark.is-hot .hero-mark-glyph {
+  filter: drop-shadow(0 18px 36px rgba(196, 165, 116, 0.38));
+}
+
+.hero-mark.is-hot .hero-mark-brass {
+  opacity: 0.92;
+}
+
+.hero-mark.is-hot .hero-mark-sheen {
+  opacity: 1;
 }
 
 @media (min-width: 1280px) {
@@ -296,11 +359,25 @@ body {
   }
 
   .reveal,
-  .hero-rise {
+  .hero-rise,
+  .hero-mark,
+  .hero-mark.is-hot {
     opacity: 1;
     transform: none;
     animation: none;
     transition: none;
+    filter: none;
+  }
+
+  .hero-mark.is-hot .hero-mark-glyph,
+  .hero-mark.is-hot .hero-mark-brass,
+  .hero-mark.is-hot .hero-mark-sheen {
+    filter: none;
+    opacity: 0;
+  }
+
+  .hero-mark.is-hot .hero-mark-glyph {
+    opacity: 1;
   }
 
   .marquee-track,

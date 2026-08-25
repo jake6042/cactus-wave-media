@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     "Cactus Wave Media",
   ],
   icons: {
-    icon: [{ url: brandAssets.markBone, type: "image/png" }],
+    icon: [{ url: brandAssets.avatar, type: "image/png" }],
     apple: [{ url: brandAssets.avatar, type: "image/png" }],
   },
   openGraph: {
@@ -72,7 +72,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable} h-full scroll-smooth scroll-pt-24 antialiased`}
     >
-      <body className="min-h-full overflow-x-clip bg-ink text-bone">
+      <body className="min-h-full bg-ink text-bone">
         <div className="grain" aria-hidden="true" />
         <ContactProvider>
           <a

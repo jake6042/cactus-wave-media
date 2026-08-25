@@ -4,14 +4,14 @@ export function InfraFeature() {
   return (
     <section className="bg-bone text-ink">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:gap-12 sm:px-8 sm:py-24 lg:grid-cols-12 lg:py-28">
-        <Reveal className="min-w-0 lg:col-span-5">
+        <div className="min-w-0 lg:col-span-5">
           <p className="text-[11px] tracking-[0.28em] uppercase text-copper-deep">
             Hosting & domains
           </p>
-          <h2 className="display-lg mt-4 font-serif">
+          <h2 className="display-lg mt-4 font-serif text-ink">
             Domain. Host. Inbox. Done.
           </h2>
-        </Reveal>
+        </div>
         <Reveal delay={2} className="lg:col-span-6 lg:col-start-7">
           <p className="text-lg leading-relaxed text-ink/70">
             The unglamorous part — handled with the same care as the homepage.

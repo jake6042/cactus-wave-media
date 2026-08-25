@@ -5,41 +5,49 @@ import { site } from "@/lib/site";
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [pending, setPending] = useState(false);
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setError(null);
+    setPending(true);
+
     const data = new FormData(event.currentTarget);
-    const name = String(data.get("name") ?? "").trim();
-    const email = String(data.get("email") ?? "").trim();
-    const company = String(data.get("company") ?? "").trim();
-    const message = String(data.get("message") ?? "").trim();
+    const payload = {
+      name: String(data.get("name") ?? "").trim(),
+      email: String(data.get("email") ?? "").trim(),
+      company: String(data.get("company") ?? "").trim(),
+      message: String(data.get("message") ?? "").trim(),
+    };
 
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      company ? `Company: ${company}` : null,
-      "",
-      message,
-    ]
-      .filter((line) => line !== null)
-      .join("\n");
-
-    const href = `mailto:${site.email}?subject=${encodeURIComponent(
-      `Project inquiry — ${name || company || "Cactus Wave"}`,
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = href;
-    setSent(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = (await response.json().catch(() => ({}))) as { error?: string };
+      if (!response.ok) {
+        setError(result.error ?? "Could not send the note.");
+        return;
+      }
+      setSent(true);
+    } catch {
+      setError("Could not send the note.");
+    } finally {
+      setPending(false);
+    }
   }
 
   if (sent) {
     return (
       <div>
         <p className="font-serif text-2xl leading-tight text-ink">
-          Your mail client is opening.
+          Received. We’ll write back.
         </p>
         <p className="mt-3 text-[13px] leading-relaxed text-ink/55">
-          If it doesn’t, write directly to{" "}
+          It lands in{" "}
           <a
             className="text-brass underline-offset-4 hover:underline"
             href={`mailto:${site.email}`}
@@ -77,11 +85,15 @@ export function ContactForm() {
           className="mt-1.5 w-full resize-none border-0 border-b border-ink/15 bg-transparent py-2 text-[15px] leading-relaxed text-ink outline-none placeholder:text-ink/30 focus:border-brass"
         />
       </label>
+      {error ? (
+        <p className="text-[13px] leading-relaxed text-ink/70">{error}</p>
+      ) : null}
       <button
         type="submit"
-        className="mt-1 min-h-11 justify-self-start rounded-full bg-brass px-7 py-2.5 text-[11px] font-medium tracking-[0.16em] uppercase text-ink transition-colors hover:bg-ink hover:text-bone"
+        disabled={pending}
+        className="mt-1 min-h-11 justify-self-start rounded-full bg-brass px-7 py-2.5 text-[11px] font-medium tracking-[0.16em] uppercase text-ink transition-colors hover:bg-ink hover:text-bone disabled:opacity-50"
       >
-        Send the note
+        {pending ? "Sending…" : "Send the note"}
       </button>
     </form>
   );

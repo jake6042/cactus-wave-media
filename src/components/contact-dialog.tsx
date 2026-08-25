@@ -79,10 +79,15 @@ export function ContactProvider({ children }: { children: ReactNode }) {
 
 export function useContactDialog() {
   const context = useContext(ContactDialogContext);
-  if (!context) {
-    throw new Error("useContactDialog must be used within ContactProvider");
-  }
-  return context;
+  // Missing provider must not unmount the page — Fast Refresh of layout
+  // previously threw here and blanked the homepage.
+  return (
+    context ?? {
+      open: false,
+      openContact: () => {},
+      closeContact: () => {},
+    }
+  );
 }
 
 export function ContactTrigger({

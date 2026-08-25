@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Wordmark } from "@/components/brand";
 import { ContactTrigger } from "@/components/contact-dialog";
 import { nav, site } from "@/lib/site";
@@ -56,16 +55,8 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-[10px] tracking-[0.12em] uppercase text-sand sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:text-[11px] sm:tracking-[0.14em]">
-          <p className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <span>
-              © {new Date().getFullYear()} {site.name}
-            </span>
-            <Link
-              href="/brand"
-              className="tracking-[0.14em] text-sand/70 no-underline transition-colors hover:text-bone"
-            >
-              Brand
-            </Link>
+          <p>
+            © {new Date().getFullYear()} {site.name}
           </p>
           <p>All disciplines. One studio.</p>
         </div>

@@ -9,7 +9,8 @@ export const site = {
 } as const;
 
 export const nav = [
-  { href: "/#work", label: "Work" },
+  // Hidden until the Work / Selected work section is shown again
+  // { href: "/#work", label: "Work" },
   { href: "/#services", label: "Services" },
   { href: "/#studio", label: "Studio" },
   { href: "/#contact", label: "Contact", opensContact: true },
@@ -73,6 +74,41 @@ export const process = [
     id: "05",
     title: "Tend",
     body: "Measure, refine, add, campaign. A presence is living. We stay on it.",
+  },
+] as const;
+
+export const platforms = [
+  {
+    name: "Custom",
+    note: "Built for you. No template underneath.",
+  },
+  {
+    name: "WordPress",
+    note: "The CMS most teams already know.",
+  },
+  {
+    name: "WooCommerce",
+    note: "Shops that live on WordPress.",
+  },
+  {
+    name: "Shopify",
+    note: "Stores that need to sell tomorrow.",
+  },
+  {
+    name: "Webflow",
+    note: "Design-led sites, still ours to finish.",
+  },
+  {
+    name: "Framer",
+    note: "Campaign sites that move.",
+  },
+  {
+    name: "BigCommerce",
+    note: "Larger catalogs. Same restraint.",
+  },
+  {
+    name: "HubSpot",
+    note: "When the site has to talk to the pipeline.",
   },
 ] as const;
 

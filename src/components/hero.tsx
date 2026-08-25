@@ -1,5 +1,5 @@
-import { BrandMark } from "@/components/brand";
 import { ButtonLink } from "@/components/button-link";
+import { HeroMark } from "@/components/hero-mark";
 import { Tide } from "@/components/tide";
 
 export function Hero() {
@@ -22,17 +22,14 @@ export function Hero() {
             </p>
             <div className="hero-rise hero-rise-4 mt-8 flex flex-wrap items-center gap-3 sm:mt-10 sm:gap-4">
               <ButtonLink href="/#contact">Start a project</ButtonLink>
-              <ButtonLink href="/#work" variant="ghost">
+              {/* Hidden until the Work / Selected work section is shown again */}
+              {/* <ButtonLink href="/#work" variant="ghost">
                 Selected work
-              </ButtonLink>
+              </ButtonLink> */}
             </div>
           </div>
 
-          <BrandMark
-            surface="ink"
-            fluid
-            className="hero-rise hero-rise-3 hero-mark mx-auto hidden min-[1100px]:block"
-          />
+          <HeroMark />
         </div>
       </div>
 

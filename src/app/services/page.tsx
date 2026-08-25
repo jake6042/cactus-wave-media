@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactBlock } from "@/components/contact-block";
+import { Platforms } from "@/components/platforms";
 import { Process } from "@/components/process";
 import { Reveal } from "@/components/reveal";
 import { ServicesList } from "@/components/services-list";
@@ -29,6 +30,7 @@ export default function ServicesPage() {
         </Reveal>
       </section>
       <ServicesList heading={false} />
+      <Platforms />
       <InfraFeature />
       <Process />
       <ContactBlock />

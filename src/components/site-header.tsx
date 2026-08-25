@@ -62,7 +62,7 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:h-20 sm:px-8">
-        <Wordmark href="/" markSize={36} />
+        <Wordmark href="/" markOnly markSize={36} />
 
         <nav
           className="hidden items-center gap-6 xl:gap-9 lg:flex"
