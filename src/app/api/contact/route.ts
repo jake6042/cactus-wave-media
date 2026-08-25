@@ -35,7 +35,7 @@ export async function POST(request: Request) {
 
   const resend = new Resend(key);
   const from =
-    process.env.RESEND_FROM ?? "Cactus Wave Media <onboarding@resend.dev>";
+    process.env.RESEND_FROM ?? `Cactus Wave Media <${site.email}>`;
   const to = process.env.CONTACT_TO ?? site.email;
 
   const { error } = await resend.emails.send({
@@ -56,13 +56,8 @@ export async function POST(request: Request) {
 
   if (error) {
     console.error("Resend rejected the send:", error);
-    const testingOnly = /own email|verify a domain/i.test(error.message ?? "");
     return NextResponse.json(
-      {
-        error: testingOnly
-          ? "Resend will not deliver to this inbox until cactuswavemedia.com is verified in Resend. Add their DNS records, or set CONTACT_TO to the email on the Resend account."
-          : "Could not send the note.",
-      },
+      { error: error.message || "Could not send the note." },
       { status: 502 },
     );
   }
