@@ -125,13 +125,21 @@ function ContactCardDialog({
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
+  const [sent, setSent] = useState(false);
+
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog
+      open={open}
+      onOpenChange={(next) => {
+        if (!next) setSent(false);
+        onOpenChange(next);
+      }}
+    >
       <DialogContent
         showCloseButton={false}
         className="z-[90] top-[max(0.75rem,env(safe-area-inset-top))] w-[min(calc(100vw-1.25rem),28rem)] max-h-[min(40rem,calc(100dvh-1.5rem))] max-w-[calc(100vw-1.25rem)] translate-y-0 gap-0 overflow-y-auto overflow-x-hidden rounded-[2px] border-0 bg-bone p-0 text-ink shadow-[0_40px_90px_rgba(0,0,0,0.55)] ring-1 ring-brass/35 sm:top-1/2 sm:max-w-[28rem] sm:-translate-y-1/2"
       >
-        <div className="relative px-5 pb-6 pt-6 sm:px-8 sm:pb-9 sm:pt-8">
+        <div className="relative px-5 pb-6 pt-6 sm:px-8 sm:pb-8 sm:pt-8">
           <span
             aria-hidden="true"
             className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-brass to-transparent sm:inset-x-8"
@@ -145,18 +153,34 @@ function ContactCardDialog({
             </DialogClose>
           </div>
 
-          <DialogHeader className="mt-6 gap-2 sm:mt-7">
-            <DialogTitle className="font-serif text-[clamp(1.65rem,6vw,2rem)] leading-none tracking-tight text-ink">
-              Start a project
-            </DialogTitle>
-            <DialogDescription className="max-w-[22rem] text-[13px] leading-relaxed text-ink/50">
-              Name, a way to write back, and what you need. We reply like humans.
-            </DialogDescription>
-          </DialogHeader>
-
-          <div className="mt-6 sm:mt-7">
-            <ContactForm key={open ? "open" : "closed"} />
-          </div>
+          {sent ? (
+            <DialogHeader className="mt-8 gap-3 pb-2 sm:mt-10">
+              <DialogTitle className="font-serif text-[clamp(1.85rem,6vw,2.15rem)] leading-tight tracking-tight text-ink">
+                Received.
+              </DialogTitle>
+              <DialogDescription className="max-w-[20rem] text-[13px] leading-relaxed text-ink/50">
+                We’ll write back. You can close this.
+              </DialogDescription>
+            </DialogHeader>
+          ) : (
+            <>
+              <DialogHeader className="mt-6 gap-2 sm:mt-7">
+                <DialogTitle className="font-serif text-[clamp(1.65rem,6vw,2rem)] leading-none tracking-tight text-ink">
+                  Start a project
+                </DialogTitle>
+                <DialogDescription className="max-w-[22rem] text-[13px] leading-relaxed text-ink/50">
+                  Name, a way to write back, and what you need. We reply like
+                  humans.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="mt-6 sm:mt-7">
+                <ContactForm
+                  key={open ? "open" : "closed"}
+                  onSent={() => setSent(true)}
+                />
+              </div>
+            </>
+          )}
         </div>
       </DialogContent>
     </Dialog>

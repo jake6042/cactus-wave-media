@@ -1,10 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { site } from "@/lib/site";
 
-export function ContactForm() {
-  const [sent, setSent] = useState(false);
+export function ContactForm({ onSent }: { onSent?: () => void }) {
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
 
@@ -32,32 +30,12 @@ export function ContactForm() {
         setError(result.error ?? "Could not send the note.");
         return;
       }
-      setSent(true);
+      onSent?.();
     } catch {
       setError("Could not send the note.");
     } finally {
       setPending(false);
     }
-  }
-
-  if (sent) {
-    return (
-      <div>
-        <p className="font-serif text-2xl leading-tight text-ink">
-          Received. We’ll write back.
-        </p>
-        <p className="mt-3 text-[13px] leading-relaxed text-ink/55">
-          It lands in{" "}
-          <a
-            className="text-brass underline-offset-4 hover:underline"
-            href={`mailto:${site.email}`}
-          >
-            {site.email}
-          </a>
-          .
-        </p>
-      </div>
-    );
   }
 
   return (
