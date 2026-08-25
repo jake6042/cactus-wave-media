@@ -55,7 +55,16 @@ export async function POST(request: Request) {
   });
 
   if (error) {
-    return NextResponse.json({ error: "Could not send the note." }, { status: 502 });
+    console.error("Resend rejected the send:", error);
+    const testingOnly = /own email|verify a domain/i.test(error.message ?? "");
+    return NextResponse.json(
+      {
+        error: testingOnly
+          ? "Resend will not deliver to this inbox until cactuswavemedia.com is verified in Resend. Add their DNS records, or set CONTACT_TO to the email on the Resend account."
+          : "Could not send the note.",
+      },
+      { status: 502 },
+    );
   }
 
   return NextResponse.json({ ok: true });
